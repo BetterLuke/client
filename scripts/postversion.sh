@@ -4,7 +4,7 @@ set -eu
 
 cd "$(dirname "$0")"
 
-git push https://github.com/hypothesis/client.git --follow-tags
+git push https://github.com/hypothesis/client.git HEAD:testing-jenkins --follow-tags
 
 # Wait a moment to give GitHub a chance to realize that the tag exists
 sleep 2
