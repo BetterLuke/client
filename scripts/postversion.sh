@@ -4,6 +4,9 @@ set -eu
 
 cd "$(dirname "$0")"
 
+# XXX - TESTING
+exit 0
+
 git push https://github.com/hypothesis/client.git master:master --follow-tags
 
 # Wait a moment to give GitHub a chance to realize that the tag exists

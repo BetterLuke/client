@@ -16,6 +16,3 @@ if [ "$CAN_PUSH" != "true" ]; then
   echo "Cannot push to GitHub using the access token '$GITHUB_TOKEN'"
   exit 1
 fi
-
-# Check that we're not releasing broken code
-make test
