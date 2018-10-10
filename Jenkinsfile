@@ -3,7 +3,7 @@
 node {
     checkout scm
 
-    nodeEnv = docker.image("node:10")
+    nodeEnv = docker.image("node:10-stretch")
     workspace = pwd()
 
     stage 'Build'
