@@ -1,6 +1,7 @@
 #!/bin/sh
 
 set -eu
+set -x  # XXX - Debugging
 
 # Check that tag creation works
 
