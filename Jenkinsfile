@@ -30,7 +30,7 @@ node {
     nodeEnv.inside("-e HOME=${workspace}") {
         withCredentials([
             [$class: 'StringBinding', credentialsId: 'npm-token', variable: 'NPM_TOKEN'],
-            [$class: 'StringBinding', credentialsId: 'github-jenkins', variable: 'GITHUB_TOKEN']) {
+            [$class: 'StringBinding', credentialsId: 'github-jenkins', variable: 'GITHUB_TOKEN']]) {
 
             sh "yarn version --minor"
 
