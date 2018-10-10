@@ -32,7 +32,7 @@ node {
             [$class: 'StringBinding', credentialsId: 'npm-token', variable: 'NPM_TOKEN'],
             [$class: 'StringBinding', credentialsId: 'github-jenkins', variable: 'GITHUB_TOKEN']]) {
 
-            sh "git --version" // XXX - Debugging
+            sh "git tag -d v1.94.0 || true"  // XXX - Debugging
             sh "git config --global user.email dev@list.hypothes.is"
             sh "git config --global user.name 'Hypothesis Developers'"
             sh "yarn version --minor"
