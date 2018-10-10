@@ -32,6 +32,8 @@ node {
             [$class: 'StringBinding', credentialsId: 'npm-token', variable: 'NPM_TOKEN'],
             [$class: 'StringBinding', credentialsId: 'github-jenkins', variable: 'GITHUB_TOKEN']]) {
 
+            sh "git config --global user.email dev@list.hypothes.is"
+            sh "git config --global user.name 'Hypothesis Developers'"
             sh "yarn version --minor"
 
             // Use `npm` rather than `yarn` for publishing.
