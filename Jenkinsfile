@@ -50,7 +50,7 @@ node {
       returnStdout: true
     ).trim()
 
-    nodeEnv.inside("e HOME=${workspace}") {
+    nodeEnv.inside("-e HOME=${workspace}") {
       sh "echo Uploading package version ${pkgVersion}"
     }
     // Upload the contents of the package to an S3 bucket, which it
