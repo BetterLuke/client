@@ -1,10 +1,9 @@
 #!/bin/sh
 
 set -eu
-set -x  # XXX - Debugging
 
 # Check that tag creation works
-
+#
 # TODO - Sign the tag. Adding the `--sign` argument doesn't work on Jenkins
 # when this command is run from within a `node:10` Docker container.
 git tag --message "Dummy Tag" dummy-tag

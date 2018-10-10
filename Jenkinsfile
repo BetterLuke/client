@@ -32,10 +32,11 @@ node {
             [$class: 'StringBinding', credentialsId: 'npm-token', variable: 'NPM_TOKEN'],
             [$class: 'StringBinding', credentialsId: 'github-jenkins', variable: 'GITHUB_TOKEN']]) {
 
-            sh "git tag -d v1.94.0 || true"  // XXX - Debugging
             sh "git config --global user.email dev@list.hypothes.is"
             sh "git config --global user.name 'Hypothesis Developers'"
-            sh "yarn version --minor"
+            // sh "yarn version --minor"
+            sh "git tag -d v1.9.4-testing-jenkins || true"
+            sh "yarn version --new-version 1.9.4-testing-jenkins"
 
             // Use `npm` rather than `yarn` for publishing.
             // See https://github.com/yarnpkg/yarn/pull/3391.
