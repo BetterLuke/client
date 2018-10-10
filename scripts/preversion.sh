@@ -2,8 +2,11 @@
 
 set -eu
 
-# Check that tag signing works
-git tag --sign --message "Dummy Tag" dummy-tag
+# Check that tag creation works
+
+# TODO - Sign the tag. Adding the `--sign` argument doesn't work on Jenkins
+# when this command is run from within a `node:10` Docker container.
+git tag --message "Dummy Tag" dummy-tag
 git tag --delete dummy-tag > /dev/null
 
 # Check GitHub API access token
